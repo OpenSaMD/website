@@ -1,1 +1,0 @@
-import{J as t,V as l}from"./q-03fdf88d.js";const e=()=>t(l,{children:t("section",{children:t("div",{class:"max-w-6xl mx-auto py-6 px-4 sm:px-6 h-[60vh]",children:[t("h1",{class:"text-4xl font-bold leading-tighter tracking-tighter mb-8 font-heading",children:"Blog"}),t("p",{class:"text-xl",children:"Coming soon ..."})]})})},"RI_0");export{e as s_52l4XaghPsw};
