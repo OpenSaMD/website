@@ -1,0 +1,1 @@
+import{J as t}from"./q-b03c6f1f.js";const e="/build/q-2d2de3e4.svg?width=130&svg",s=()=>t("span",{class:"self-center ml-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white flex items-center",children:t("img",{src:e,class:"inline-block mr-1",width:130,alt:"RAi Logo",loading:"lazy"})});export{s as s_a5mSleG0cuQ};
