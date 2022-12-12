@@ -77,7 +77,7 @@ export const HeroItem: RegisteredComponent = {
     },
     {
       name: 'tagline',
-      type: 'string'
+      type: 'longText'
     }
   ],
 }

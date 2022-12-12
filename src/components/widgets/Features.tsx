@@ -1,48 +1,16 @@
 import { component$ } from "@builder.io/qwik";
 import { IconStar } from "~/components/icons/IconStar";
+import { RegisteredComponent } from "@builder.io/sdk-qwik";
 
-export default component$(() => {
+type ColumnItem = {
+  title: string,
+  description: string
+}
+
+const Features = component$((props: {title: string, description: string, leftColumn: ColumnItem[], rightColumn: ColumnItem[]}) => {
   const items = [
-    [
-      {
-        title: "Qwik + Tailwind CSS Integration",
-        description:
-          "A seamless integration between two great frameworks that offer high productivity, performance and versatility.",
-        icon: "tabler:brand-tailwind",
-      },
-      {
-        title: "Ready-to-use Components",
-        description:
-          "Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...",
-        icon: "tabler:components",
-      },
-      {
-        title: "Best Practices",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
-        icon: "tabler:list-check",
-      },
-    ],
-    [
-      {
-        title: "Excellent Page Speed",
-        description:
-          "Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.",
-        icon: "tabler:rocket",
-      },
-      {
-        title: "Search Engine Optimization (SEO)",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
-        icon: "tabler:arrows-right-left",
-      },
-      {
-        title: "Open to new ideas and contributions",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
-        icon: "tabler:bulb",
-      },
-    ],
+    props.leftColumn,
+    props.rightColumn,
   ];
 
   return (
@@ -53,11 +21,10 @@ export default component$(() => {
             Features
           </p>
           <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-            What you get with <span class="whitespace-nowrap">Qwind</span>
+            {props.title}
           </h2>
           <p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+            {props.description}
           </p>
         </div>
         <div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
@@ -85,3 +52,47 @@ export default component$(() => {
     </section>
   );
 });
+
+export const FeaturesItem: RegisteredComponent=   {
+  component: Features,
+  name: 'Features',
+  builtIn: true,
+  inputs: [
+    {
+      name: 'title',
+      type: 'string'
+    },
+    {
+      name: 'description',
+      type: 'longText'
+    },
+    {
+      name: 'leftColumn',
+      type: 'list',
+      subFields: [
+        {
+          name: "title",
+          type: 'string',
+        },
+        {
+          name: "description",
+          type: 'longText'
+        }
+      ]
+    },
+    {
+      name: 'rightColumn',
+      type: 'list',
+      subFields: [
+        {
+          name: "title",
+          type: 'string',
+        },
+        {
+          name: "description",
+          type: 'longText'
+        }
+      ]
+    }
+  ],
+}

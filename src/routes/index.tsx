@@ -3,7 +3,7 @@ import { useLocation } from "@builder.io/qwik-city";
 import { getContent, RegisteredComponent, RenderContent, getBuilderSearchParams } from "@builder.io/sdk-qwik";
 
 import { HeroItem } from "~/components/widgets/Hero";
-import Features from "~/components/widgets/Features";
+import { FeaturesItem } from "~/components/widgets/Features";
 import FAQs from "~/components/widgets/FAQs";
 import Stats from "~/components/widgets/Stats";
 import CallToAction from "~/components/widgets/CallToAction";
@@ -13,12 +13,7 @@ export const BUILDER_MODEL = "page";
 
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
   HeroItem,
-  {
-    component: Features,
-    name: 'Features',
-    builtIn: true,
-    inputs: [],
-  },
+  FeaturesItem,
   {
     component: FAQs,
     name: 'FAQs',
