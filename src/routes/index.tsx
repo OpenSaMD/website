@@ -5,8 +5,7 @@ import { getContent, RegisteredComponent, RenderContent, getBuilderSearchParams 
 import { HeroItem } from "~/components/widgets/Hero";
 import { FeaturesItem } from "~/components/widgets/Features";
 import { FaqsItem } from "~/components/widgets/Faqs";
-import Stats from "~/components/widgets/Stats";
-import CallToAction from "~/components/widgets/CallToAction";
+import { CallToActionItem } from "~/components/widgets/CallToAction";
 
 export const BUILDER_PUBLIC_API_KEY = 'edda39be50be49b9ae9ea5964be965f3';
 export const BUILDER_MODEL = "page";
@@ -15,18 +14,7 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
   HeroItem,
   FeaturesItem,
   FaqsItem,
-  {
-    component: Stats,
-    name: 'Stats',
-    builtIn: true,
-    inputs: [],
-  },
-  {
-    component: CallToAction,
-    name: 'CallToAction',
-    builtIn: true,
-    inputs: [],
-  },
+  CallToActionItem,
 ];
 
 export default component$(() => {
