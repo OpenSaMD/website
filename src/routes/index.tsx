@@ -4,7 +4,7 @@ import { getContent, RegisteredComponent, RenderContent, getBuilderSearchParams 
 
 import { HeroItem } from "~/components/widgets/Hero";
 import { FeaturesItem } from "~/components/widgets/Features";
-import FAQs from "~/components/widgets/FAQs";
+import { FaqsItem } from "~/components/widgets/Faqs";
 import Stats from "~/components/widgets/Stats";
 import CallToAction from "~/components/widgets/CallToAction";
 
@@ -14,12 +14,7 @@ export const BUILDER_MODEL = "page";
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
   HeroItem,
   FeaturesItem,
-  {
-    component: FAQs,
-    name: 'FAQs',
-    builtIn: true,
-    inputs: [],
-  },
+  FaqsItem,
   {
     component: Stats,
     name: 'Stats',
