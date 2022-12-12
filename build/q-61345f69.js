@@ -1,0 +1,1 @@
+import{J as e,D as i}from"./q-786ae8c1.js";const a=t=>e("section",{...t.attributes,style:(()=>{t.maxWidth&&typeof t.maxWidth=="number"&&t.maxWidth})(),children:e(i,{},"Fb_14")});export{a as s_ZWF9iD5WeLg};
