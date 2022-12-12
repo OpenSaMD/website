@@ -1,5 +1,5 @@
 import { component$, Resource, useResource$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { useLocation, DocumentHead } from "@builder.io/qwik-city";
 import { getContent, RegisteredComponent, RenderContent, getBuilderSearchParams } from "@builder.io/sdk-qwik";
 
 import { HeroItem } from "~/components/widgets/Hero";
@@ -46,35 +46,13 @@ export default component$(() => {
   );
 });
 
-
-// import { component$ } from "@builder.io/qwik";
-// import type { DocumentHead } from "@builder.io/qwik-city";
-
-// import Hero from "~/components/widgets/Hero";
-// import Features from "~/components/widgets/Features";
-// import FAQs from "~/components/widgets/FAQs";
-// import Stats from "~/components/widgets/Stats";
-// import CallToAction from "~/components/widgets/CallToAction";
-
-// export default component$(() => {
-//   return (
-//     <>
-//       <Hero />
-//       <Features />
-//       <FAQs />
-//       <Stats />
-//       <CallToAction />
-//     </>
-//   );
-// });
-
-// export const head: DocumentHead = {
-//   title: "OpenSaMD & RAi",
-//   meta: [
-//     {
-//       name: "description",
-//       content:
-//         "We help you commercialise your open source medical software.",
-//     },
-//   ],
-// };
+export const head: DocumentHead = {
+  title: "OpenSaMD & RAi",
+  meta: [
+    {
+      name: "description",
+      content:
+        "We help you commercialise your open source medical software.",
+    },
+  ],
+};
