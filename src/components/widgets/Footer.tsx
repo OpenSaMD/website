@@ -2,8 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 import { IconTwitter } from "~/components/icons/IconTwitter";
-import { IconInstagram } from "~/components/icons/IconInstagram";
-import { IconFacebook } from "~/components/icons/IconFacebook";
+import { IconLinkedIn } from "~/components/icons/IconLinkedIn";
 import { IconGithub } from "~/components/icons/IconGithub";
 
 export default component$(() => {
@@ -55,13 +54,12 @@ export default component$(() => {
   ];
 
   const social = [
-    { label: "Twitter", icon: IconTwitter, href: "#" },
-    { label: "Instagram", icon: IconInstagram, href: "#" },
-    { label: "Facebook", icon: IconFacebook, href: "#" },
+    { label: "LinkedIn", icon: IconLinkedIn, href: "https://www.linkedin.com/company/OpenSaMD/" },
+    { label: "Twitter", icon: IconTwitter, href: "https://twitter.com/OpenSaMD" },
     {
       label: "Github",
       icon: IconGithub,
-      href: "https://github.com/onwidget/qwind",
+      href: "https://github.com/OpenSaMD/OpenSaMD",
     },
   ];
 
@@ -118,16 +116,7 @@ export default component$(() => {
           </ul>
 
           <div class="text-sm text-gray-700 mr-4 dark:text-slate-400">
-            <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"></span>
-            Made by{" "}
-            <a
-              class="text-secondary-700 hover:underline dark:text-gray-200"
-              href="https://onwidget.com/"
-            >
-              {" "}
-              onWidget
-            </a>{" "}
-            · All rights reserved.
+
           </div>
         </div>
       </div>

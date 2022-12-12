@@ -1,7 +1,7 @@
 export const SITE = {
-  name: "Qwind",
+  name: "OpenSaMD",
 
-  origin: "https://qwind.pages.dev",
+  origin: "https://opensamd.com",
   basePathname: "/",
   trailingSlash: true
 };
