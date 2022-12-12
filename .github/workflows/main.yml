@@ -5,6 +5,13 @@ on:
     branches:
       - main
   pull_request:
+  repository_dispatch:
+    types:
+      - webhook
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
   
 jobs:
   web:
@@ -26,14 +33,14 @@ jobs:
         run: npm run build
 
       - name: Add GitHub Pages config files
-        if: github.event_name == 'push'
+        if: github.ref == 'refs/heads/main'
         run: |
           echo opensamd.com > dist/CNAME
           touch dist/.nojekyll
           cp dist/index.html dist/404.html
 
       - name: Deploy to gh-pages branch
-        if: github.event_name == 'push'
+        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
