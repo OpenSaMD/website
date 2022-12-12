@@ -1,0 +1,1 @@
+import{J as e,f as r,x as n}from"./q-9c29034e.js";const a=t=>e("span",{class:"builder-text",get dangerouslySetInnerHTML(){return t.text},[r]:{dangerouslySetInnerHTML:n(t,"text")}});export{a as s_15p0cKUxgIE};
