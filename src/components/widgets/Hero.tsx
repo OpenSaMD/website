@@ -34,9 +34,18 @@ const Hero = component$((props: {header: string, tagline: string}) => {
                     </a>
                   </div>
                   <div class="flex w-full sm:w-auto">
-                    <a class="btn w-full bg-gray-50 dark:bg-transparent" href="#features" rel="noopener">
+                    <button 
+                      class="btn w-full bg-gray-50 dark:bg-transparent"
+                      onClick$={() => {
+                          const e = document.getElementById("features");
+                          if (e !== null) {
+                            e.scrollIntoView(); 
+                          }
+                        }
+                      }
+                    >
                       Learn more
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
