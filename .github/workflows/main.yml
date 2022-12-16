@@ -30,7 +30,9 @@ jobs:
         run: npm ci
 
       - name: Build app
-        run: npm run build
+        run: |
+          npm run build
+          npm run build  # Seems to remember old builder.io content, building twice appears to fix it.
 
       - name: Add GitHub Pages config files
         if: github.ref == 'refs/heads/main'
