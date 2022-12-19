@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { RegisteredComponent } from "@builder.io/sdk-qwik";
 
-const CallToAction = component$((props: {title: string, description: string, button: string}) => {
+const CallToAction = component$((props: {title: string, description: string, buttonText: string, buttonUrl: string}) => {
   return (
     <section class="relative">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -17,11 +17,11 @@ const CallToAction = component$((props: {title: string, description: string, but
             <div class="mt-6">
               <a
                 class="btn btn-primary mb-4 sm:mb-0 w-full sm:w-auto"
-                href="https://github.com/OpenSaMD/OpenSaMD"
+                href={props.buttonUrl}
                 target="_blank"
                 rel="noopener"
               >
-                {props.button}
+                {props.buttonText}
               </a>
             </div>
           </div>
@@ -45,8 +45,12 @@ export const CallToActionItem: RegisteredComponent = {
       type: 'longText'
     },
     {
-      name: 'button',
-      type: 'string'
+      name: 'buttonText',
+      type: "string"
+    },
+    {
+      name: 'buttonUrl',
+      type: "string"
     }
   ],
 }
