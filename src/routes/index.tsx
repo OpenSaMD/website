@@ -10,6 +10,8 @@ import { CallToActionItem } from "~/components/widgets/CallToAction";
 export const BUILDER_PUBLIC_API_KEY = 'edda39be50be49b9ae9ea5964be965f3';
 export const BUILDER_MODEL = "page";
 
+// Input types can be found at:
+// https://www.builder.io/c/docs/custom-components-input-types#required
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
   HeroItem,
   FeaturesItem,

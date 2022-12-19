@@ -1,14 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { RegisteredComponent } from "@builder.io/sdk-qwik";
 
-// @ts-ignore
-import srcsetAvif from "~/assets/images/hero.jpg?w=400;900&avif&srcset";
-// @ts-ignore
-import srcsetWebp from "~/assets/images/hero.jpg?w=400;900&webp&srcset";
-// @ts-ignore
-import { src as placeholder } from "~/assets/images/hero.jpg?width=400&metadata";
-
-const Hero = component$((props: {header: string, tagline: string}) => {
+const Hero = component$((props: {header: string, tagline: string, image: string}) => {
   return (
     <section class={`bg-gradient-to-b md:bg-gradient-to-r from-white via-purple-50 to-sky-100 dark:bg-none mt-[-100px]`}>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 md:flex md:h-screen 2xl:h-auto pt-[100px]">
@@ -54,14 +47,12 @@ const Hero = component$((props: {header: string, tagline: string}) => {
           <div class="block md:flex items-center flex-1">
             <div class="relative m-auto max-w-4xl">
               <picture>
-                <source srcSet={srcsetAvif} type="image/avif" />
-                <source srcSet={srcsetWebp} type="image/webp" />
                 <img
-                  src={placeholder}
+                  src={props.image}
                   width={1000}
                   height={1250}
                   class="mx-auto w-full rounded-md md:h-full drop-shadow-2xl bg-gray-400 dark:bg-slate-700"
-                  alt="Qwind Hero Image (Cool dog)"
+                  alt="OpenSaMD"
                   loading="eager"
                   decoding="async"
                 />
@@ -87,6 +78,10 @@ export const HeroItem: RegisteredComponent = {
     {
       name: 'tagline',
       type: 'longText'
+    },
+    {
+      name: 'image',
+      type: 'file'
     }
   ],
 }
