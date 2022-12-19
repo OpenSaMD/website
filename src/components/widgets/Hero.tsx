@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { RegisteredComponent } from "@builder.io/sdk-qwik";
 
-const Hero = component$((props: {header: string, tagline: string, image: string}) => {
+const Hero = component$((props: {header: string, tagline: string, image: string, primaryButtonText: string, primaryButtonUrl: string}) => {
   return (
     <section class={`bg-gradient-to-b md:bg-gradient-to-r from-white via-purple-50 to-sky-100 dark:bg-none mt-[-100px]`}>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 md:flex md:h-screen 2xl:h-auto pt-[100px]">
@@ -19,11 +19,11 @@ const Hero = component$((props: {header: string, tagline: string, image: string}
                   <div class="flex w-full sm:w-auto">
                     <a
                       class="btn btn-primary sm:mb-0 w-full"
-                      href="https://github.com/OpenSaMD/OpenSaMD"
+                      href={props.primaryButtonUrl}
                       target="_blank"
                       rel="noopener"
                     >
-                      Git Repository
+                      {props.primaryButtonText}
                     </a>
                   </div>
                   <div class="flex w-full sm:w-auto">
@@ -82,6 +82,14 @@ export const HeroItem: RegisteredComponent = {
     {
       name: 'image',
       type: 'file'
+    },
+    {
+      name: 'primaryButtonText',
+      type: "string"
+    },
+    {
+      name: 'primaryButtonUrl',
+      type: "string"
     }
   ],
 }
